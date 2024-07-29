@@ -15,7 +15,7 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
-#if MODS_ALLOWED
+#if sys
 import sys.FileSystem;
 import sys.io.File;
 #end
@@ -65,7 +65,7 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 		border = new FlxSprite().loadGraphic(Paths.image('menus/credits/creditsoverlay'));
 		add(border);
 
-		#if MODS_ALLOWED
+		#if sys
 		//trace("finding mod shit");
 		for (folder in Paths.getModDirectories())
 		{
