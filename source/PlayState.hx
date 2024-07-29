@@ -1198,7 +1198,7 @@ class PlayState extends MusicBeatState
 			var luaToLoad:String = Paths.getPreloadPath('custom_notetypes/' + notetype + '.lua');
 			if(OpenFlAssets.exists(luaToLoad))
 			{
-				luaArray.push(new FunkinLua(Asset2File.getPath(luaToLoad)));
+				luaArray.push(new FunkinLua(luaToLoad));
 			}
 			
 		}
@@ -1208,7 +1208,7 @@ class PlayState extends MusicBeatState
 			var luaToLoad:String = Paths.getPreloadPath('custom_events/' + event + '.lua');
 			if(OpenFlAssets.exists(luaToLoad))
 			{
-				luaArray.push(new FunkinLua(Asset2File.getPath(luaToLoad)));
+				luaArray.push(new FunkinLua(luaToLoad));
 			}
 			
 		}
