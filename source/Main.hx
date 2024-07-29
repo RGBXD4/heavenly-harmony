@@ -22,6 +22,9 @@ import sys.FileSystem;
 import sys.io.File;
 import sys.io.Process;
 #end
+#if android
+import android.content.Context;
+#end
 
 using StringTools;
 
@@ -47,7 +50,13 @@ class Main extends Sprite
 	{
 		super();
 
+		#if android
 		Storage.copyNecessaryFiles();
+		
+		Sys.setCwd(Path.addTrailingSlash(Context.getExternalFilesDir()));
+		#elseif (ios || switch)
+		Sys.setCwd(System.applicationStorageDirectory);
+		#end
 
 		if (stage != null)
 		{
