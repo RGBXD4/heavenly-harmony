@@ -66,7 +66,7 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 		border = new FlxSprite().loadGraphic(Paths.image('menus/credits/creditsoverlay'));
 		add(border);
 
-			var creditsFile:String = Paths.txt('data/creditss');
+			var creditsFile:String = Paths.txt('creditss');
 			if (OpenFlAssets.exists(creditsFile))
 			{
 				var firstarray:Array<String> = Assets.getText(creditsFile).split('\n');
