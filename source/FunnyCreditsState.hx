@@ -19,6 +19,7 @@ import flixel.tweens.FlxTween;
 import sys.FileSystem;
 import sys.io.File;
 #end
+import openfl.utils.Assets as OpenFlAssets;
 import lime.utils.Assets;
 import flixel.addons.display.FlxBackdrop;
 
@@ -65,14 +66,13 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 		border = new FlxSprite().loadGraphic(Paths.image('menus/credits/creditsoverlay'));
 		add(border);
 
-		#if sys
 		//trace("finding mod shit");
 		for (folder in Paths.getModDirectories())
 		{
 			var creditsFile:String = Paths.txt('creditss'); //yeah reusing this again
-			if (FileSystem.exists(creditsFile))
+			if (OpenFlAssets.exists(creditsFile))
 			{
-				var firstarray:Array<String> = File.getContent(creditsFile).split('\n');
+				var firstarray:Array<String> = Assets.getText(creditsFile).split('\n');
 				for(i in firstarray)
 				{
 					var arr:Array<String> = i.replace('\\n', '\n').split("::");
@@ -84,9 +84,9 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 		};
 		var folder = "";
 			var creditsFile:String = Paths.txt('creditss');
-			if (FileSystem.exists(creditsFile))
+			if (OpenFlAssets.exists(creditsFile))
 			{
-				var firstarray:Array<String> = File.getContent(creditsFile).split('\n');
+				var firstarray:Array<String> = Assets.getText(creditsFile).split('\n');
 				for(i in firstarray)
 				{
 					var arr:Array<String> = i.replace('\\n', '\n').split("::");
@@ -95,35 +95,6 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 				}
 				creditsStuff.push(['']);
 			}
-		for (folder in Paths.getModDirectories())
-		{
-			var creditsFile:String = Paths.mods(folder + '/data/creditss.txt');
-			if (FileSystem.exists(creditsFile))
-			{
-				var firstarray:Array<String> = File.getContent(creditsFile).split('\n');
-				for(i in firstarray)
-				{
-					var arr:Array<String> = i.replace('\\n', '\n').split("::");
-					if(arr.length >= 5) arr.push(folder);
-					creditsStuff.push(arr);
-				}
-				creditsStuff.push(['']);
-			}
-		};
-		var folder = "";
-			var creditsFile:String = Paths.mods('data/creditss.txt');
-			if (FileSystem.exists(creditsFile))
-			{
-				var firstarray:Array<String> = File.getContent(creditsFile).split('\n');
-				for(i in firstarray)
-				{
-					var arr:Array<String> = i.replace('\\n', '\n').split("::");
-					if(arr.length >= 5) arr.push(folder);
-					creditsStuff.push(arr);
-				}
-				creditsStuff.push(['']);
-			}
-		#end
 
 		var pisspoop:Array<Array<String>> = [];
 		
