@@ -66,24 +66,7 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 		border = new FlxSprite().loadGraphic(Paths.image('menus/credits/creditsoverlay'));
 		add(border);
 
-		//trace("finding mod shit");
-		for (folder in Paths.getPreloadPath())
-		{
-			var creditsFile:String = Paths.txt('creditss'); //yeah reusing this again
-			if (OpenFlAssets.exists(creditsFile))
-			{
-				var firstarray:Array<String> = Assets.getText(creditsFile).split('\n');
-				for(i in firstarray)
-				{
-					var arr:Array<String> = i.replace('\\n', '\n').split("::");
-					if(arr.length >= 5) arr.push(folder);
-					creditsStuff.push(arr);
-				}
-				creditsStuff.push(['']);
-			}
-		};
-		var folder = "";
-			var creditsFile:String = Paths.txt('creditss');
+			var creditsFile:String = Paths.txt('data/creditss');
 			if (OpenFlAssets.exists(creditsFile))
 			{
 				var firstarray:Array<String> = Assets.getText(creditsFile).split('\n');
