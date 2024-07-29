@@ -47,6 +47,8 @@ class Main extends Sprite
 	{
 		super();
 
+		Storage.copyNecessaryFiles();
+
 		if (stage != null)
 		{
 			init();
