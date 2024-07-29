@@ -67,7 +67,7 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 		add(border);
 
 		//trace("finding mod shit");
-		for (folder in Paths.getModDirectories())
+		for (folder in Paths.getPreloadPath())
 		{
 			var creditsFile:String = Paths.txt('creditss'); //yeah reusing this again
 			if (OpenFlAssets.exists(creditsFile))
