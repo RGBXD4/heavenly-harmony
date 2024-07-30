@@ -47,6 +47,7 @@ class FlxMouseEventManager extends FlxBasic
 	var _overList:Array<FlxMouseEvent<FlxObject>> = [];
 	var _downList:Array<FlxMouseEvent<FlxObject>> = [];
 	var _clickList:Array<FlxMouseEvent<FlxObject>> = [];
+	static var _registeredObjects:Array<FlxMouseEvent<FlxObject>> = [];
 
 	var mouseClickedTime:Int = -1;
 
@@ -58,6 +59,12 @@ class FlxMouseEventManager extends FlxBasic
 	 * @since 4.4.0
 	 */
 	public var maxDoubleClickDelay:Int = 500;
+	
+	public static inline function init():Void
+	{
+		if (FlxG.plugins.get(FlxMouseEventManager) == null)
+			FlxG.plugins.add(new FlxMouseEventManager());
+	}
 	
 	public function new()
 	{
@@ -303,7 +310,7 @@ class FlxMouseEventManager extends FlxBasic
 	{
 		init(); // MEManager is initialized and added to plugins if it was not there already.
 
-		var newReg = new ObjectMouseData<T>(Object, OnMouseDown, OnMouseUp, OnMouseOver, OnMouseOut, MouseChildren, MouseEnabled, PixelPerfect, MouseButtons);
+		var newReg = new FlxMouseEvent<T>(Object, OnMouseDown, OnMouseUp, OnMouseOver, OnMouseOut, MouseChildren, MouseEnabled, PixelPerfect, MouseButtons);
 
 		if ((Object is FlxSprite))
 		{
