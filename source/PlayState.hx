@@ -1298,6 +1298,9 @@ class PlayState extends MusicBeatState
 
 				case 'ugh' | 'guns' | 'stress':
 					tankIntro();
+					
+				case 'wistdul' | 'revelation' | 'heavenbound':
+				     startDialogue(dialogueJson);
 
 				default:
 					startCountdown();
@@ -1602,6 +1605,9 @@ class PlayState extends MusicBeatState
 		if(psychDialogue != null) return;
 
 		if(dialogueFile.dialogue.length > 0) {
+		
+		FlxG.sound.playMusic(Paths.music('freakyMenu'));
+		
 			inCutscene = true;
 			precacheList.set('dialogue', 'sound');
 			precacheList.set('dialogueClose', 'sound');
