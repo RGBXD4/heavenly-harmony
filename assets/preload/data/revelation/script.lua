@@ -17,10 +17,10 @@ function onTimerCompleted(tag, loops, loopsLeft)
 end
 
 -- Dialogue (When a dialogue is finished, it calls startCountdown again)
-function onNextDialogue(count)
+--function onNextDialogue(count)
 	-- triggered when the next dialogue line starts, 'line' starts with 1
-end
+--end
 
-function onSkipDialogue(count)
+--function onSkipDialogue(count)
 	-- triggered when you press Enter and skip a dialogue line that was still being typed, dialogue line starts with 1
-end
+--end
