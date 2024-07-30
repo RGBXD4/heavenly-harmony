@@ -1606,7 +1606,7 @@ class PlayState extends MusicBeatState
 
 		if(dialogueFile.dialogue.length > 0) {
 		
-		FlxG.sound.playMusic(Paths.music('freakyMenu'));
+	//	FlxG.sound.playMusic(Paths.music('freakyMenu'));
 		
 			inCutscene = true;
 			precacheList.set('dialogue', 'sound');
