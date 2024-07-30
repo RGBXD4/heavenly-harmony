@@ -105,7 +105,7 @@
 			"text": "But why? You're such a great singer!"
 		},
 		{
-			"sound": "1_6",
+			"sound": "c",
 			"speed": 0.05,
 			"portrait": "althea",
 			"boxState": "normal",
@@ -121,7 +121,7 @@
 			"text": "Well, if they wanna judge they can kiss our ass. We're just trying to have fun!"
 		},
 		{
-			"sound": "",
+			"sound": "1_6",
 			"speed": 0.05,
 			"portrait": "althea",
 			"boxState": "normal",
