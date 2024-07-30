@@ -275,6 +275,10 @@ class FreeplayState extends MusicBeatState
 		funkay.scrollFactor.set();
 		funkay.screenCenter();
 		funkay.alpha = 0;
+
+		#if android
+		addVirtualPad(FULL, A_B);
+		#end
 		
 		super.create();
 	}
