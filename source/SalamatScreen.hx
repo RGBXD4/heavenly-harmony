@@ -28,6 +28,10 @@ class SalamatScreen extends MusicBeatState
 		noproblemo.scrollFactor.set();
 		noproblemo.setFormat(Paths.font("GhostKidAOE.otf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(noproblemo);
+
+		#if android
+		addVirtualPad(NONE, A);
+		#end
 	}
 
 	override function update(elapsed:Float)
