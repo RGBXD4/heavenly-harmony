@@ -74,7 +74,7 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 				for(i in firstarray)
 				{
 					var arr:Array<String> = i.replace('\\n', '\n').split("::");
-					if(arr.length >= 5) arr.push(Paths.getPreloadPath());
+					if(arr.length >= 5) arr.push(Paths.getLibraryPath());
 					creditsStuff.push(arr);
 				}
 				creditsStuff.push(['']);
