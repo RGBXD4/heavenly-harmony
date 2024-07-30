@@ -203,6 +203,10 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 		FlxG.mouse.visible = true;
 		
 		updateSelection(0);
+
+		#if android
+		addVirtualPad(NONE, B);
+		#end
 		
 		super.create();
 	}
