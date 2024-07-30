@@ -1299,7 +1299,7 @@ class PlayState extends MusicBeatState
 				case 'ugh' | 'guns' | 'stress':
 					tankIntro();
 					
-				case 'wistdul' | 'revelation' | 'heavenbound':
+				case 'wistful' | 'revelation' | 'heavenbound':
 				     startDialogue(dialogueJson);
 
 				default:
