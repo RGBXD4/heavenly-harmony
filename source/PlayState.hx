@@ -1278,9 +1278,6 @@ class PlayState extends MusicBeatState
 
 				case 'ugh' | 'guns' | 'stress':
 					tankIntro();
-					
-				case 'wistful' | 'revelation' | 'heavenbound':
-				     startDialogue(dialogueJson);
 
 				default:
 					startCountdown();
