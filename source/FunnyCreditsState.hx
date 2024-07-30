@@ -165,7 +165,7 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 			smallIcon.ID = i;
 			
 			credIcons.push(smallIcon);
-			//FlxMouseEventManager.add(smallIcon, null, null, hoverCallback,null,false,true,false);
+			FlxMouseEventManager.add(smallIcon, null, null, hoverCallback,null,false,true,false);
 			
 			var bigIcon:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menus/credits/portrait/' + creditsStuff[i][1]));
 			bigIcon.scale.set(0.65,0.65);
@@ -203,10 +203,6 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 		FlxG.mouse.visible = true;
 		
 		updateSelection(0);
-
-		#if android
-		addVirtualPad(NONE, B);
-		#end
 		
 		super.create();
 	}
