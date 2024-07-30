@@ -870,12 +870,12 @@ class PlayState extends MusicBeatState
 		// "GLOBAL" SCRIPTS
 		#if LUA_ALLOWED
 		var doPush:Bool = false;
-                if(OpenFlAssets.exists("assets/scripts/" + "script.lua"))
+                if(OpenFlAssets.exists("assets/scripts/" + "SongIntro.lua"))
                 {
 			doPush = true;
                 }
 		if(doPush)
-			luaArray.push(new FunkinLua(Asset2File.getPath("assets/scripts/" + "script.lua")));
+			luaArray.push(new FunkinLua(Asset2File.getPath("assets/scripts/" + "SongIntro.lua")));
 		#end
 
 		// STAGE SCRIPTS
