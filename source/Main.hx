@@ -50,14 +50,6 @@ class Main extends Sprite
 	{
 		super();
 
-		#if android
-		Storage.copyNecessaryFiles();
-		
-		Sys.setCwd(Path.addTrailingSlash(Context.getExternalFilesDir()));
-		#elseif (ios || switch)
-		Sys.setCwd(System.applicationStorageDirectory);
-		#end
-
 		if (stage != null)
 		{
 			init();
